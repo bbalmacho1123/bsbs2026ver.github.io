@@ -1,0 +1,1530 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="IzCwSf6eb0q62ovPRQEPKmWkkngOukNYPuGWM4rwHXo" />
+<title>북생북사 — 중·고등학생 교과서 중고거래</title>
+<meta name="description" content="북생북사 — 중·고등학생이 교과서·문제집을 사고파는 중고거래. 우리 학교·근처 학교 친구들과 가까운 순으로 책을 거래해요.">
+<meta name="keywords" content="북생북사, 교과서 중고거래, 문제집 중고, 학교, 경기도, 중고등학생">
+<meta property="og:title" content="북생북사 — 중·고등학생 교과서 중고거래">
+<meta property="og:description" content="교과서·문제집을 우리 학교·근처 학교 친구들과 사고파는 중고거래 사이트.">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Gothic+A1:wght@400;500;700;800&display=swap">
+<style>
+:root{
+  --paper:#F7F3EA;
+  --surface:#FFFDF7;
+  --surface-2:#F1EBDC;
+  --ink:#25241E;
+  --ink-soft:#5C5849;
+  --ink-faint:#918B78;
+  --line:#E4DCC9;
+  --leaf:#2F7A4D;
+  --leaf-deep:#215639;
+  --leaf-soft:#E4F0E6;
+  --apricot:#DE7B3C;
+  --apricot-soft:#FBEBDC;
+  --danger:#C0563E;
+  --shadow:0 2px 4px rgba(50,44,25,.05),0 10px 30px rgba(50,44,25,.08);
+  --shadow-lg:0 16px 44px rgba(40,35,20,.16);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#16160F; --surface:#201F17; --surface-2:#2A2820; --ink:#ECE7D8; --ink-soft:#B4AE9B;
+    --ink-faint:#847E6C; --line:#37342A; --leaf:#63B383; --leaf-deep:#7EC79B;
+    --leaf-soft:#20301F; --apricot:#EC9A5C; --apricot-soft:#33261A; --danger:#E58A72;
+    --shadow:0 2px 4px rgba(0,0,0,.3),0 12px 30px rgba(0,0,0,.35);
+    --shadow-lg:0 18px 48px rgba(0,0,0,.5);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#16160F; --surface:#201F17; --surface-2:#2A2820; --ink:#ECE7D8; --ink-soft:#B4AE9B;
+  --ink-faint:#847E6C; --line:#37342A; --leaf:#63B383; --leaf-deep:#7EC79B;
+  --leaf-soft:#20301F; --apricot:#EC9A5C; --apricot-soft:#33261A; --danger:#E58A72;
+  --shadow:0 2px 4px rgba(0,0,0,.3),0 12px 30px rgba(0,0,0,.35);
+  --shadow-lg:0 18px 48px rgba(0,0,0,.5);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{height:100%}
+body{
+  font-family:"Gothic A1","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  background:var(--paper);color:var(--ink);height:100%;overflow:hidden;
+  -webkit-font-smoothing:antialiased;line-height:1.55;
+}
+.display{font-family:"Do Hyeon","Gothic A1",sans-serif;letter-spacing:-.01em}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+input{font-family:inherit;font-size:1rem;color:var(--ink)}
+:focus-visible{outline:2.5px solid var(--leaf);outline-offset:3px;border-radius:6px}
+
+.screen{
+  position:fixed;inset:0;z-index:1;display:none;
+  overflow-y:auto;-webkit-overflow-scrolling:touch;
+}
+.screen.active{display:block;animation:pageIn .28s cubic-bezier(.33,1,.68,1)}
+#home.active{display:flex}
+@keyframes pageIn{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:translateX(0)}}
+
+/* 테마 토글 */
+.theme-toggle{
+  position:fixed;top:14px;right:64px;z-index:50;width:42px;height:42px;border-radius:12px;
+  background:var(--surface);border:1px solid var(--line);color:var(--ink-soft);
+  display:grid;place-items:center;box-shadow:var(--shadow);
+}
+.theme-toggle svg{width:20px;height:20px}
+.theme-toggle:hover{color:var(--ink)}
+.menu-btn{
+  position:fixed;top:14px;right:14px;z-index:50;width:42px;height:42px;border-radius:12px;
+  background:var(--surface);border:1px solid var(--line);color:var(--ink-soft);
+  display:grid;place-items:center;box-shadow:var(--shadow);
+}
+.menu-btn svg{width:22px;height:22px}
+.menu-btn:hover{color:var(--ink)}
+
+/* 마이페이지 */
+.mp-card{text-align:center;padding:10px 0 22px}
+.mp-avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(150deg,var(--leaf),var(--leaf-deep));color:#fff;display:grid;place-items:center;font-size:2.1rem;font-weight:800;margin:8px auto 14px;box-shadow:0 8px 20px rgba(47,122,77,.3)}
+.mp-name{font-size:1.42rem;font-weight:800}
+.mp-sub{font-size:.85rem;color:var(--ink-faint);margin-top:3px}
+
+/* 학교 검색 */
+.school-searchbar{display:flex;gap:8px;margin-bottom:6px}
+.school-searchbar input{flex:1;padding:13px 15px;border:1.5px solid var(--line);border-radius:12px;background:var(--surface);outline:none;color:var(--ink)}
+.school-searchbar input:focus{border-color:var(--leaf);box-shadow:0 0 0 3px var(--leaf-soft)}
+.school-searchbar button{padding:0 22px;border-radius:12px;background:var(--leaf);color:#fff;font-weight:700;flex-shrink:0}
+.school-searchbar button:hover{background:var(--leaf-deep)}
+.sc-results{margin:14px 0 18px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface);box-shadow:var(--shadow)}
+.sc-empty{text-align:center;color:var(--ink-faint);padding:44px 20px;font-weight:600}
+.sc-row{display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line);cursor:pointer;transition:background .12s}
+.sc-row:last-child{border-bottom:none}
+.sc-row:hover{background:var(--surface-2)}
+.sc-row.on{background:var(--leaf-soft)}
+.sc-radio{width:20px;height:20px;border-radius:50%;border:2px solid var(--line);flex-shrink:0;position:relative}
+.sc-row.on .sc-radio{border-color:var(--leaf)}
+.sc-row.on .sc-radio::after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--leaf)}
+.sc-name{font-weight:700;flex:1;min-width:0}
+.sc-addr{font-size:.85rem;color:var(--ink-faint);flex-shrink:0}
+
+/* ============ 홈 화면 ============ */
+#home{
+  flex-direction:column;align-items:center;padding:32px 20px 40px;
+  background:radial-gradient(1100px 500px at 50% -8%, var(--leaf-soft), transparent 60%),var(--paper);
+}
+.brand{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:6vh}
+.logo{
+  width:76px;height:76px;border-radius:22px;background:linear-gradient(150deg,var(--leaf),var(--leaf-deep));
+  display:grid;place-items:center;font-size:40px;color:#fff;box-shadow:0 10px 26px rgba(47,122,77,.34);
+}
+.brand h1{font-size:2.5rem;line-height:1}
+.brand .tagline{color:var(--ink-soft);font-size:1.02rem;text-align:center;max-width:24ch;text-wrap:balance}
+.brand .tagline b{color:var(--leaf-deep)}
+.prompt{margin:38px 0 20px;font-size:1.15rem;font-weight:700;text-align:center;text-wrap:balance}
+.choices{display:grid;grid-template-columns:1fr 1fr;gap:18px;width:100%;max-width:560px}
+.choice{
+  position:relative;overflow:hidden;background:var(--surface);border:1.5px solid var(--line);border-radius:24px;
+  padding:30px 22px 26px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px;
+  box-shadow:var(--shadow);transition:transform .18s cubic-bezier(.2,.9,.3,1),box-shadow .18s,border-color .18s;
+}
+.choice::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:var(--accent);transform:scaleX(0);transition:transform .22s}
+.choice:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--accent)}
+.choice:hover::after{transform:scaleX(1)}
+.choice:active{transform:translateY(-2px)}
+.choice .ic{width:76px;height:76px;border-radius:20px;display:grid;place-items:center;font-size:38px;background:var(--accent-soft)}
+.choice .ct{font-size:1.32rem}
+.choice .cs{font-size:.9rem;color:var(--ink-faint);text-wrap:balance;min-height:2.6em}
+.choice .go{margin-top:4px;font-size:.86rem;font-weight:700;color:var(--accent-ink);display:inline-flex;align-items:center;gap:5px}
+.choice .go svg{width:15px;height:15px}
+.choice.give{--accent:var(--apricot);--accent-soft:var(--apricot-soft);--accent-ink:var(--apricot)}
+.choice.find{--accent:var(--leaf);--accent-soft:var(--leaf-soft);--accent-ink:var(--leaf-deep)}
+.home-foot{margin-top:34px;font-size:.86rem;color:var(--ink-faint);text-align:center}
+.home-foot .dot{margin:0 7px;opacity:.5}
+
+/* ============ 공통 상단바 (하위 페이지) ============ */
+.topbar{
+  position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--paper) 90%,transparent);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+  display:flex;align-items:center;gap:12px;padding:14px 18px;
+}
+.back-btn{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;color:var(--ink-soft);border:1px solid var(--line);background:var(--surface)}
+.back-btn:hover{background:var(--surface-2);color:var(--ink)}
+.back-btn svg{width:20px;height:20px}
+.topbar .tt{font-size:1.2rem}
+.topbar .tt small{color:var(--ink-faint);font-family:"Gothic A1";font-size:.72rem;font-weight:700;display:block;letter-spacing:.02em}
+
+/* ============ 폼 (내 책 팔기) ============ */
+.form-wrap{max-width:600px;margin:0 auto;padding:24px 20px 60px}
+.field{margin-bottom:26px}
+.field > label{display:block;font-size:1.02rem;font-weight:800;margin-bottom:12px}
+.field > label .star{color:var(--apricot);margin-left:2px}
+.pillrow{display:flex;flex-wrap:wrap;gap:9px}
+.pill{
+  padding:10px 18px;border-radius:999px;font-size:.94rem;font-weight:500;
+  background:var(--surface);border:1.5px solid var(--line);color:var(--ink-soft);transition:all .14s;
+}
+.pill:hover{border-color:var(--leaf);color:var(--ink)}
+.pill.on{background:var(--leaf);border-color:var(--leaf);color:#fff;font-weight:700;box-shadow:0 4px 12px rgba(47,122,77,.26)}
+.yn .pill{min-width:92px;text-align:center}
+.yn .pill.on{background:var(--apricot);border-color:var(--apricot);box-shadow:0 4px 12px rgba(222,123,60,.28)}
+
+.tinput{
+  width:100%;padding:14px 16px;border:1.5px solid var(--line);border-radius:13px;background:var(--surface);
+  outline:none;transition:border-color .15s,box-shadow .15s;
+}
+.tinput:focus{border-color:var(--leaf);box-shadow:0 0 0 3px var(--leaf-soft)}
+.tinput.err{border-color:var(--danger);box-shadow:0 0 0 3px color-mix(in srgb,var(--danger) 18%,transparent)}
+textarea.tinput{min-height:88px;line-height:1.5;resize:vertical;font-family:inherit}
+.field > label .opt{color:var(--ink-faint);font-size:.8rem;font-weight:600;margin-left:4px}
+.hint{font-size:.82rem;color:var(--danger);margin-top:7px;display:flex;align-items:center;gap:5px}
+.hint::before{content:"※";font-weight:700}
+.price-wrap{position:relative;display:flex;align-items:center}
+.price-wrap .won{position:absolute;right:16px;font-weight:700;color:var(--ink-faint);pointer-events:none}
+.price-wrap .tinput{padding-right:44px;font-variant-numeric:tabular-nums;font-weight:600}
+.price-quick{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px}
+.price-quick button{font-size:.82rem;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink-soft)}
+.price-quick button:hover{border-color:var(--leaf);color:var(--leaf-deep)}
+
+.submit-btn{
+  width:100%;padding:17px;border-radius:15px;background:var(--leaf);color:#fff;font-size:1.08rem;font-weight:800;
+  display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 6px 18px rgba(47,122,77,.3);
+  transition:background .15s,transform .12s;margin-top:8px;
+}
+.submit-btn:hover{background:var(--leaf-deep)}
+.submit-btn:active{transform:translateY(1px)}
+.submit-btn svg{width:19px;height:19px}
+.form-note{text-align:center;font-size:.82rem;color:var(--ink-faint);margin-top:14px}
+
+/* ============ 등록완료 화면 ============ */
+.done-wrap{max-width:520px;margin:0 auto;padding:40px 22px 60px;text-align:center}
+.done-check{
+  width:88px;height:88px;border-radius:50%;background:var(--leaf-soft);color:var(--leaf);
+  display:grid;place-items:center;margin:6vh auto 22px;animation:pop .4s cubic-bezier(.2,1.3,.4,1);
+}
+.done-check svg{width:46px;height:46px}
+@keyframes pop{from{transform:scale(.4);opacity:0}to{transform:scale(1);opacity:1}}
+.done-wrap h2{font-size:1.7rem;margin-bottom:8px}
+.done-wrap .dsub{color:var(--ink-soft);margin-bottom:26px}
+.summary{
+  background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;text-align:left;margin-bottom:26px;box-shadow:var(--shadow);
+}
+.summary .srow{display:flex;padding:14px 18px;border-bottom:1px solid var(--line);font-size:.95rem}
+.summary .srow:last-child{border-bottom:none}
+.summary .sk{width:92px;color:var(--ink-faint);flex-shrink:0}
+.summary .sv{font-weight:700}
+.summary .sv.price{color:var(--leaf-deep)}
+.done-actions{display:flex;gap:10px}
+.done-actions button{flex:1;padding:15px;border-radius:14px;font-weight:800;font-size:1rem}
+.btn-outline{background:var(--surface);border:1.5px solid var(--line);color:var(--ink)}
+.btn-outline:hover{background:var(--surface-2)}
+.btn-fill{background:var(--leaf);color:#fff}
+.btn-fill:hover{background:var(--leaf-deep)}
+
+/* placeholder(책 찾아보기 - 다음 컷에서 제작) */
+.placeholder{max-width:520px;margin:0 auto;padding:70px 22px;text-align:center;color:var(--ink-faint)}
+.placeholder .pemoji{font-size:56px;margin-bottom:16px}
+.placeholder h2{color:var(--ink);font-size:1.4rem;margin-bottom:8px}
+
+/* 검색 결과 상단 요약 */
+.search-recap{
+  background:var(--surface);border:1px solid var(--line);border-radius:14px;
+  padding:14px 16px;margin-bottom:8px;box-shadow:var(--shadow);
+}
+.search-recap .rc-label{font-size:.78rem;color:var(--ink-faint);font-weight:700;margin-bottom:9px}
+.search-recap .rc-chips{display:flex;flex-wrap:wrap;gap:7px}
+.rc-chip{font-size:.85rem;padding:6px 12px;border-radius:999px;background:var(--leaf-soft);color:var(--leaf-deep);font-weight:700}
+.rc-chip.none{background:var(--surface-2);color:var(--ink-faint);font-weight:500}
+.rc-count{font-size:.85rem;color:var(--ink-faint);margin-top:10px}
+.rc-count b{color:var(--ink);font-variant-numeric:tabular-nums}
+
+/* 검색 결과 카드 목록 */
+.results-list{display:flex;flex-direction:column;gap:14px;margin-top:16px}
+.result-card{
+  display:flex;gap:14px;align-items:center;
+  background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px;box-shadow:var(--shadow);
+  transition:box-shadow .16s,transform .16s;
+}
+.result-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px)}
+.rcard-cover{width:76px;height:96px;border-radius:11px;display:grid;place-items:center;font-size:36px;flex-shrink:0;position:relative;overflow:hidden}
+.rcard-cover .subj{position:absolute;top:5px;left:5px;font-size:.62rem;font-weight:700;background:rgba(255,255,255,.88);color:#333;padding:2px 6px;border-radius:6px;z-index:2}
+/* 실제 책 사진 커버 */
+.rcard-cover,.ob-cover,.cr-cover,.kb-cover{position:relative;overflow:hidden}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+/* 사진 업로드(내 책 팔기) */
+.photo-pick{width:132px;height:164px;border:1.5px dashed var(--line);border-radius:14px;display:grid;place-items:center;cursor:pointer;background:var(--surface);overflow:hidden;position:relative}
+.photo-pick:hover{border-color:var(--leaf)}
+.photo-empty{color:var(--ink-faint);font-size:.9rem;font-weight:600;text-align:center;padding:0 8px;line-height:1.5}
+.photo-preview{width:100%;height:100%;object-fit:cover}
+.rcard-info{flex:1;min-width:0;display:flex;flex-direction:column;gap:5px}
+.rcard-info .r{display:flex;gap:8px;font-size:.92rem;align-items:baseline}
+.rcard-info .r .k{color:var(--ink-faint);width:50px;flex-shrink:0;font-size:.82rem}
+.rcard-info .r .v{font-weight:700;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rcard-info .r .v.price{color:var(--leaf-deep)}
+.rcard-meta{font-size:.76rem;color:var(--ink-faint);margin-top:3px;display:flex;gap:6px;flex-wrap:wrap}
+.rcard-meta .mtag{background:var(--surface-2);padding:2px 8px;border-radius:6px}
+.rcard-note{font-size:.8rem;color:var(--ink-soft);background:var(--surface-2);padding:6px 10px;border-radius:8px;margin-top:4px;line-height:1.45;width:100%}
+.rcard-actions{display:flex;flex-direction:column;gap:8px;flex-shrink:0}
+.rcard-btn{padding:10px 15px;border-radius:11px;font-size:.86rem;font-weight:700;white-space:nowrap;border:1.5px solid var(--line);background:var(--surface);transition:all .14s}
+.rcard-btn.ask{color:var(--ink)}
+.rcard-btn.ask:hover{background:var(--surface-2);border-color:var(--ink-faint)}
+.rcard-btn.buy{background:var(--leaf);color:#fff;border-color:var(--leaf)}
+.rcard-btn.buy:hover{background:var(--leaf-deep)}
+.no-result{text-align:center;padding:56px 20px;color:var(--ink-faint)}
+.no-result .nr-emoji{font-size:50px;margin-bottom:14px;opacity:.75}
+.no-result .nr-t{color:var(--ink);font-weight:700;font-size:1.05rem;margin-bottom:6px}
+@media(max-width:560px){
+  .result-card{flex-wrap:wrap}
+  .rcard-info{flex-basis:calc(100% - 90px)}
+  .rcard-actions{flex-direction:row;width:100%;margin-top:2px}
+  .rcard-actions .rcard-btn{flex:1;text-align:center}
+}
+
+/* ============ 가격 제안하기 ============ */
+.offer-book{
+  display:flex;align-items:center;gap:13px;background:var(--surface);border:1px solid var(--line);
+  border-radius:15px;padding:14px;margin-bottom:24px;box-shadow:var(--shadow);
+}
+.offer-book .ob-cover{width:58px;height:74px;border-radius:10px;display:grid;place-items:center;font-size:28px;flex-shrink:0}
+.offer-book .ob-info{flex:1;min-width:0}
+.offer-book .ob-title{font-weight:800;font-size:1rem;line-height:1.3;margin-bottom:4px}
+.offer-book .ob-meta{font-size:.8rem;color:var(--ink-faint);margin-bottom:6px}
+.offer-book .ob-ask{font-size:.86rem}
+.offer-book .ob-ask .lbl{color:var(--ink-faint)}
+.offer-book .ob-ask .val{font-weight:800;color:var(--leaf-deep);margin-left:4px}
+.offer-diff{font-size:.85rem;font-weight:700;margin-top:9px;min-height:1.2em}
+.offer-diff.lower{color:var(--leaf-deep)}
+.offer-diff.same{color:var(--ink-soft)}
+.offer-diff.higher{color:var(--danger)}
+
+/* ============ 로그인 화면 ============ */
+#welcome{
+  flex-direction:column;align-items:center;justify-content:center;padding:32px 24px;text-align:center;
+  background:radial-gradient(1100px 500px at 50% -8%, var(--leaf-soft), transparent 60%),var(--paper);
+}
+#welcome.active{display:flex}
+.login-wrap{display:flex;flex-direction:column;align-items:center;gap:16px;max-width:360px;width:100%}
+.login-sub{color:var(--ink-soft);font-size:1rem;line-height:1.6;margin-bottom:8px;text-wrap:balance}
+.google-btn{
+  width:100%;display:flex;align-items:center;justify-content:center;gap:12px;
+  padding:14px 18px;border-radius:14px;background:#fff;border:1.5px solid #dadce0;
+  color:#3c4043;font-size:1rem;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.08);
+  transition:box-shadow .15s,transform .12s;
+}
+.google-btn:hover{box-shadow:0 4px 14px rgba(0,0,0,.16)}
+.google-btn:active{transform:translateY(1px)}
+.google-btn svg{width:20px;height:20px}
+.skip-link{margin-top:4px;color:var(--ink-faint);font-size:.9rem;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.skip-link:hover{color:var(--ink-soft)}
+.wc-sid{font-size:.86rem;color:var(--leaf-deep);font-weight:700;min-height:1.1em}
+.wc-scan{width:100%;font-size:.92rem;font-weight:700;color:var(--leaf-deep);background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:12px 16px;transition:border-color .15s}
+.wc-scan:hover{border-color:var(--leaf)}
+.home-greet{font-size:1.18rem;font-weight:800;color:var(--leaf-deep);text-align:center;margin-bottom:6px;min-height:1.3em}
+
+/* 프로필 칩 (로그인 후) */
+.profile-chip{
+  position:fixed;top:14px;left:14px;z-index:50;display:flex;align-items:center;gap:8px;
+  background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:5px 6px 5px 8px;box-shadow:var(--shadow);
+}
+.profile-chip .pc-photo{width:28px;height:28px;border-radius:50%;object-fit:cover;background:var(--leaf)}
+.profile-chip .pc-name{font-size:.86rem;font-weight:700;max-width:100px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.profile-chip .pc-logout{font-size:.78rem;font-weight:700;color:var(--ink-soft);background:var(--surface-2);border-radius:999px;padding:5px 11px}
+.profile-chip .pc-logout:hover{color:var(--ink)}
+.login-mini{
+  position:fixed;top:14px;left:14px;z-index:50;display:flex;align-items:center;gap:6px;
+  background:var(--leaf);color:#fff;border-radius:999px;padding:9px 17px;font-size:.9rem;font-weight:700;box-shadow:var(--shadow);
+}
+.login-mini svg{width:16px;height:16px}
+.login-mini:hover{background:var(--leaf-deep)}
+
+/* 학생증 바코드 인증 */
+.verify-desc{color:var(--ink-soft);margin-bottom:18px;line-height:1.6}
+.verify-desc b{color:var(--leaf-deep)}
+.scan-box{width:100%;max-width:360px;margin:0 auto;border-radius:16px;overflow:hidden;border:1.5px solid var(--line);background:#000;min-height:230px}
+.scan-box video{width:100%!important;display:block}
+.scan-status{font-size:.86rem;color:var(--ink-faint);margin-top:14px;min-height:1.2em}
+
+/* 홈 하단 접근 버튼(채팅·장바구니) */
+.home-access{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:24px}
+.cart-access{
+  display:inline-flex;align-items:center;gap:9px;
+  background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:11px 22px;
+  font-size:.98rem;font-weight:700;box-shadow:var(--shadow);transition:border-color .15s,transform .12s;
+}
+.cart-access:hover{border-color:var(--leaf);transform:translateY(-2px)}
+
+.place-chip-btn{max-width:min(92vw,420px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;margin:22px auto 0}
+
+/* 내 동네 설정 */
+.place-select{width:100%;padding:14px 16px;border:1.5px solid var(--line);border-radius:13px;background:var(--surface);font-size:1rem;color:var(--ink);outline:none}
+.place-select:focus{border-color:var(--leaf);box-shadow:0 0 0 3px var(--leaf-soft)}
+.gps-btn{margin-top:10px;width:100%;display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;border-radius:12px;background:var(--surface);border:1.5px solid var(--line);font-weight:700;color:var(--leaf-deep);transition:border-color .15s}
+.gps-btn:hover{border-color:var(--leaf)}
+.gps-btn svg{width:18px;height:18px}
+
+/* 검색 결과 거리 필터 / 안내 */
+.dist-chips{display:flex;gap:7px;flex-wrap:wrap;margin:16px 0 4px}
+.dchip{font-size:.85rem;padding:7px 13px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink-soft);font-weight:600}
+.dchip.on{background:var(--leaf);border-color:var(--leaf);color:#fff;font-weight:700}
+.loc-hint{font-size:.88rem;color:var(--leaf-deep);background:var(--leaf-soft);border-radius:12px;padding:12px 15px;margin:16px 0 4px;line-height:1.5}
+.loc-hint b{text-decoration:underline;cursor:pointer}
+.mtag.loc{background:var(--leaf-soft);color:var(--leaf-deep);font-weight:700}
+
+/* 채팅방 목록 */
+.chatroom{display:flex;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px;box-shadow:var(--shadow);cursor:pointer;transition:box-shadow .15s,transform .15s}
+.chatroom:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px)}
+.cr-cover{width:46px;height:58px;border-radius:9px;display:grid;place-items:center;font-size:24px;flex-shrink:0}
+.cr-info{flex:1;min-width:0}
+.cr-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.cr-top b{font-weight:800;font-size:.95rem}
+.cr-time{font-size:.72rem;color:var(--ink-faint);flex-shrink:0}
+.cr-title{font-size:.82rem;color:var(--ink-faint);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:1px 0 3px}
+.cr-last{font-size:.9rem;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cart-badge{min-width:22px;height:22px;padding:0 6px;border-radius:11px;background:var(--apricot);color:#fff;font-size:.78rem;font-weight:800;display:inline-grid;place-items:center}
+.cart-total{text-align:right;font-size:1.08rem;font-weight:700;margin-top:18px;padding:0 4px}
+.cart-total b{color:var(--leaf-deep);margin-left:6px;font-variant-numeric:tabular-nums}
+
+/* ============ 가격 흥정 메시지 ============ */
+#chat{overflow:hidden;background:var(--paper)}
+#chat.active{display:flex;flex-direction:column}
+.kb-top{display:flex;align-items:center;gap:10px;padding:10px 12px;border-bottom:1px solid var(--line);background:var(--paper);flex-shrink:0}
+.kb-ava-top{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#fff;font-size:1rem;flex-shrink:0;background:var(--leaf)}
+.kb-name{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.25}
+.kb-name b{font-weight:800;font-size:1.02rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kb-sub{font-size:.75rem;color:var(--ink-faint)}
+.kb-product{display:flex;align-items:center;gap:11px;padding:9px 14px;border-bottom:1px solid var(--line);background:var(--surface);flex-shrink:0}
+.kb-cover{width:42px;height:42px;border-radius:9px;display:grid;place-items:center;font-size:21px;flex-shrink:0}
+.kb-pinfo{flex:1;min-width:0}
+.kb-ptitle-main{font-size:.92rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kb-price{font-size:.85rem;color:var(--leaf-deep);font-weight:700;margin-top:1px}
+.kb-body{flex:1;overflow-y:auto;padding:14px 14px 8px;display:flex;flex-direction:column;background:var(--paper)}
+.kb-sys{align-self:center;font-size:.75rem;color:var(--ink-faint);background:var(--surface-2);padding:6px 13px;border-radius:999px;margin:4px 0 10px;text-align:center;max-width:92%;line-height:1.4}
+.kb-row{display:flex;gap:7px;align-items:flex-end;margin-top:9px;max-width:100%}
+.kb-row.them{justify-content:flex-start}
+.kb-row.me{justify-content:flex-end}
+.kb-ava{width:30px;height:30px;border-radius:50%;background:var(--leaf);display:grid;place-items:center;font-size:14px;flex-shrink:0;color:#fff;font-weight:700}
+.kb-bubwrap{display:flex;align-items:flex-end;gap:6px;max-width:78%}
+.kb-bubble{padding:9px 13px;font-size:.95rem;line-height:1.42;border-radius:18px;word-break:break-word;white-space:pre-wrap}
+.kb-row.them .kb-bubble{background:var(--surface);border:1px solid var(--line);border-bottom-left-radius:5px;color:var(--ink)}
+.kb-row.me .kb-bubble{background:var(--leaf);color:#fff;border-bottom-right-radius:5px}
+.kb-time{font-size:.67rem;color:var(--ink-faint);white-space:nowrap}
+.kb-quick{display:flex;gap:7px;padding:9px 12px;overflow-x:auto;flex-shrink:0;border-top:1px solid var(--line);background:var(--paper)}
+.kb-quick button{white-space:nowrap;font-size:.85rem;padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--leaf-deep);background:var(--surface);font-weight:600;flex-shrink:0}
+.kb-quick button:hover{background:var(--leaf-soft);border-color:var(--leaf)}
+.kb-input{display:flex;gap:8px;align-items:center;padding:9px 12px;border-top:1px solid var(--line);background:var(--paper);flex-shrink:0}
+.kb-input input{flex:1;padding:11px 16px;border:1px solid var(--line);border-radius:999px;background:var(--surface);outline:none}
+.kb-input input:focus{border-color:var(--leaf)}
+.kb-send{width:42px;height:42px;border-radius:50%;background:var(--leaf);color:#fff;display:grid;place-items:center;flex-shrink:0}
+.kb-send:hover{background:var(--leaf-deep)}
+.kb-send svg{width:18px;height:18px}
+
+/* toast */
+.toast-wrap{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:80;display:flex;flex-direction:column;gap:8px;align-items:center}
+.toast{background:var(--ink);color:var(--paper);padding:12px 20px;border-radius:12px;font-size:.9rem;font-weight:500;box-shadow:var(--shadow-lg);display:flex;align-items:center;gap:9px;animation:tin .3s cubic-bezier(.2,.9,.3,1);max-width:90vw}
+@keyframes tin{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:520px){
+  .choices{grid-template-columns:1fr;max-width:360px}
+  .brand h1{font-size:2.1rem}.choice .cs{min-height:0}.brand{margin-top:3vh}
+}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+
+<button class="theme-toggle" id="themeBtn" onclick="toggleTheme()" aria-label="밝게/어둡게 전환"></button>
+<button class="menu-btn" id="menuBtn" onclick="openMyPage()" aria-label="마이페이지" hidden>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+</button>
+
+<!-- ============ 시작 (이름 입력) ============ -->
+<section class="screen active" id="welcome">
+  <div class="login-wrap">
+    <div class="logo">📚</div>
+    <h1 class="display" style="font-size:2.5rem;line-height:1">북생북사</h1>
+    <p class="login-sub">교과서·문제집 중고 거래<br>이름을 알려주고 시작해요</p>
+    <input class="tinput" type="text" id="wc-name" placeholder="이름 (예: 김현빈)" autocomplete="off"
+      style="text-align:center;font-size:1.05rem" onkeydown="if(event.key==='Enter')startApp()">
+    <button class="wc-scan" id="wc-school" onclick="openSchool('welcome')">🏫 학교 선택</button>
+    <input class="tinput" type="text" id="wc-sid-input" placeholder="학번 (선택 · 직접 입력)" autocomplete="off"
+      style="text-align:center">
+    <button class="submit-btn" style="margin-top:4px" onclick="startApp()">시작하기</button>
+  </div>
+</section>
+
+<!-- ============ 홈 화면 ============ -->
+<section class="screen" id="home">
+  <div class="home-greet" id="homeGreet"></div>
+  <div class="brand">
+    <div class="logo">📚</div>
+    <h1 class="display">북생북사</h1>
+    <p class="tagline">다 본 교과서·문제집을 <b>후배에게 저렴하게</b><br>사고파는 학생 중고책방</p>
+  </div>
+  <p class="prompt">무엇을 하러 오셨나요?</p>
+  <div class="choices">
+    <button class="choice give" onclick="goSell()">
+      <div class="ic">💰</div>
+      <div class="ct display">내 책 팔기</div>
+      <div class="cs">다 본 책을 등록하고<br>필요한 후배에게 판매해요</div>
+      <span class="go">판매하러 가기 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </button>
+    <button class="choice find" onclick="show('browse')">
+      <div class="ic">🔍</div>
+      <div class="ct display">책 찾아보기</div>
+      <div class="cs">필요한 교과서·문제집을<br>과목·학년별로 싸게 찾아봐요</div>
+      <span class="go">둘러보러 가기 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </button>
+  </div>
+  <div class="home-access">
+    <button class="cart-access" onclick="openChats()">💬 채팅</button>
+    <button class="cart-access" onclick="openCart()">🛒 장바구니 <span class="cart-badge" id="cartCount">0</span></button>
+  </div>
+  <div class="home-foot">우리 학교·동네 친구들끼리 <span class="dot">·</span> 교과서 중고거래 <span class="dot">·</span> 북생북사</div>
+</section>
+
+<!-- ============ 내 책 팔기 ============ -->
+<section class="screen" id="sell">
+  <div class="topbar">
+    <button class="back-btn" onclick="show('home')" aria-label="홈으로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <div class="tt display">내 책 팔기<small>홈화면 › 내 책 팔기</small></div>
+  </div>
+  <div class="form-wrap">
+
+    <div class="field">
+      <label>책 사진 <span class="opt">(선택)</span></label>
+      <input type="file" id="f-photo" accept="image/*" style="display:none" onchange="onPhotoPick(this)">
+      <div class="photo-pick" id="photoPick" onclick="document.getElementById('f-photo').click()">
+        <div class="photo-empty" id="photoEmpty">📷<br>사진 추가</div>
+        <img id="photoPreview" class="photo-preview" hidden alt="">
+      </div>
+    </div>
+
+    <div class="field">
+      <label>학년 <span class="star">*</span></label>
+      <div class="pillrow" id="grade-row"></div>
+    </div>
+
+    <div class="field">
+      <label>과목 <span class="star">*</span></label>
+      <div class="pillrow" id="subject-row"></div>
+    </div>
+
+    <div class="field">
+      <label>책 제목 <span class="star">*</span></label>
+      <input class="tinput" type="text" id="f-title" placeholder="예: 개념원리 수학 (상)" autocomplete="off">
+      <div class="hint">정확한 제목을 입력해주세요</div>
+    </div>
+
+    <div class="field">
+      <label>출판사 <span class="star">*</span></label>
+      <input class="tinput" type="text" id="f-pub" placeholder="예: 좋은책신사고" autocomplete="off">
+      <div class="hint">정확한 출판사명을 입력해주세요</div>
+    </div>
+
+    <div class="field">
+      <label>필기 / 풀이 흔적 <span class="star">*</span></label>
+      <div class="pillrow yn" id="mark-row">
+        <button class="pill" data-v="예" onclick="pickMark(this)">✏️ 예 (있어요)</button>
+        <button class="pill" data-v="아니오" onclick="pickMark(this)">✨ 아니오 (깨끗해요)</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>원하는 가격 <span class="star">*</span></label>
+      <div class="price-wrap">
+        <input class="tinput" type="text" inputmode="numeric" id="f-price" placeholder="예: 5000" autocomplete="off" oninput="formatPrice(this)">
+        <span class="won">원</span>
+      </div>
+      <div class="price-quick">
+        <button type="button" onclick="setPrice(0)">무료나눔</button>
+        <button type="button" onclick="setPrice(3000)">3,000원</button>
+        <button type="button" onclick="setPrice(5000)">5,000원</button>
+        <button type="button" onclick="setPrice(10000)">10,000원</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>특이사항 <span class="opt">(선택)</span></label>
+      <textarea class="tinput" id="f-note" placeholder="예: 앞쪽 20p 필기 있음 · 답지 포함 · 표지 살짝 헤짐 등, 책에 대한 추가 정보를 자유롭게 적어주세요"></textarea>
+    </div>
+
+    <button class="submit-btn" onclick="submitBook()">
+      등록 완료 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </button>
+    <div class="form-note">등록 완료를 누르면 판매 글이 올라가요.</div>
+  </div>
+</section>
+
+<!-- ============ 등록 완료 ============ -->
+<section class="screen" id="done">
+  <div class="done-wrap">
+    <div class="done-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></div>
+    <h2 class="display">등록이 완료되었습니다</h2>
+    <p class="dsub">계속하시겠습니까?</p>
+    <div class="summary" id="summary"></div>
+    <div class="done-actions">
+      <button class="btn-outline" onclick="resetForm();show('sell')">➕ 추가 등록</button>
+      <button class="btn-fill" onclick="show('home')">🏠 홈화면으로 이동</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 책 찾아보기 (다음 컷에서 제작) ============ -->
+<section class="screen" id="browse">
+  <div class="topbar">
+    <button class="back-btn" onclick="show('home')" aria-label="홈으로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <div class="tt display">책 찾아보기<small>홈화면 › 책 찾아보기</small></div>
+  </div>
+  <div class="form-wrap">
+
+    <div class="field">
+      <label>학년</label>
+      <div class="pillrow" id="grade-row-b"></div>
+    </div>
+
+    <div class="field">
+      <label>과목</label>
+      <div class="pillrow" id="subject-row-b"></div>
+    </div>
+
+    <div class="field">
+      <label>책 제목</label>
+      <input class="tinput" type="text" id="s-title" placeholder="예: 개념원리 수학 (상)" autocomplete="off"
+        onkeydown="if(event.key==='Enter')doSearch()">
+      <div class="hint">정확한 제목을 입력하면 더 잘 찾아요</div>
+    </div>
+
+    <div class="field">
+      <label>필기 흔적</label>
+      <div class="pillrow yn" id="mark-row-b">
+        <button class="pill" data-v="예" onclick="pickSearchMark(this)">✏️ 예 (있음)</button>
+        <button class="pill" data-v="아니오" onclick="pickSearchMark(this)">✨ 아니오 (깨끗함)</button>
+      </div>
+    </div>
+
+    <button class="submit-btn" onclick="doSearch()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+      검색하기
+    </button>
+    <div class="form-note">조건을 고르지 않아도 전체에서 검색할 수 있어요.</div>
+  </div>
+</section>
+
+<!-- ============ 검색 결과 (다음 컷에서 목록 제작) ============ -->
+<section class="screen" id="results">
+  <div class="topbar">
+    <button class="back-btn" onclick="show('browse')" aria-label="검색으로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <div class="tt display">검색 결과<small>홈화면 › 책 찾아보기 › 검색 결과</small></div>
+  </div>
+  <div class="form-wrap">
+    <div class="search-recap" id="search-recap"></div>
+    <div class="results-list" id="results-list"></div>
+  </div>
+</section>
+
+<!-- ============ 가격 제안하기 ============ -->
+<section class="screen" id="offer">
+  <div class="topbar">
+    <button class="back-btn" onclick="show('results')" aria-label="검색 결과로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <div class="tt display">가격 제안하기<small>검색 결과 › 가격 제안</small></div>
+  </div>
+  <div class="form-wrap">
+    <div class="offer-book" id="offer-book"></div>
+
+    <div class="field">
+      <label>제안할 가격 <span class="star">*</span></label>
+      <div class="price-wrap">
+        <input class="tinput" type="text" inputmode="numeric" id="offer-price" placeholder="원하는 가격을 입력하세요" autocomplete="off" oninput="formatPrice(this);updateOfferDiff()">
+        <span class="won">원</span>
+      </div>
+      <div class="offer-diff" id="offer-diff"></div>
+      <div class="price-quick" id="offer-quick"></div>
+    </div>
+
+    <button class="submit-btn" onclick="sendOffer()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+      가격 제안 보내기
+    </button>
+    <div class="form-note">판매자가 수락하면 거래를 이어갈 수 있어요.</div>
+  </div>
+</section>
+
+<!-- ============ 가격 제안 완료 ============ -->
+<section class="screen" id="offerdone">
+  <div class="done-wrap">
+    <div class="done-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></div>
+    <h2 class="display">가격 제안을 보냈습니다</h2>
+    <p class="dsub">판매자가 수락하면 알려드릴게요.</p>
+    <div class="summary" id="offer-summary"></div>
+    <div class="done-actions">
+      <button class="btn-fill" onclick="show('browse')">다시 검색</button>
+      <button class="btn-outline" onclick="show('home')">홈으로</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 학교 검색 ============ -->
+<section class="screen" id="school">
+  <div class="topbar">
+    <button class="back-btn" onclick="show(schoolReturn)" aria-label="뒤로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <div class="tt display">학교 검색<small>지역 고등학교 검색</small></div>
+  </div>
+  <div class="form-wrap">
+    <div class="school-searchbar">
+      <input type="text" id="sc-q" placeholder="학교명을 입력해주세요" autocomplete="off" onkeydown="if(event.key==='Enter')searchSchool()">
+      <button onclick="searchSchool()">검색</button>
+    </div>
+    <div class="hint" style="color:var(--ink-faint)">학교명을 포함해 입력하면 검색돼요. 예) 고양국제 → 고양국제고</div>
+    <div id="sc-results" class="sc-results"><div class="sc-empty">학교를 검색해주세요.</div></div>
+    <button class="submit-btn" onclick="confirmSchool()">이 학교로 선택</button>
+  </div>
+</section>
+
+<!-- ============ 마이페이지 ============ -->
+<section class="screen" id="mypage">
+  <div class="topbar">
+    <button class="back-btn" onclick="show('home')" aria-label="홈으로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <div class="tt display">마이페이지<small>홈화면 › 마이페이지</small></div>
+  </div>
+  <div class="form-wrap">
+    <div class="mp-card">
+      <div class="mp-avatar" id="mp-avatar">나</div>
+      <div class="mp-name" id="mp-name">이름</div>
+      <div class="mp-sub">북생북사 회원</div>
+    </div>
+    <div class="summary" id="mp-info"></div>
+    <div class="done-actions" style="flex-direction:column;gap:10px">
+      <button class="btn-outline" onclick="openProfile()">✏️ 이름 · 학번 수정</button>
+      <button class="btn-outline" onclick="openSchool('mypage')">🏫 학교 변경</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 내 동네·학교 설정 ============ -->
+<section class="screen" id="place">
+  <div class="topbar">
+    <button class="back-btn" onclick="show('home')" aria-label="홈으로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <div class="tt display">내 동네·학교<small>홈화면 › 내 동네 설정</small></div>
+  </div>
+  <div class="form-wrap">
+    <div class="field">
+      <label>지역 (경기도 시/군) <span class="star">*</span></label>
+      <select class="place-select" id="place-city"><option value="">시/군 선택</option></select>
+      <button type="button" class="gps-btn" onclick="detectLocation()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="4"/></svg>
+        현재 위치로 지역 자동 선택
+      </button>
+    </div>
+    <div class="field">
+      <label>학교 이름</label>
+      <input class="tinput" type="text" id="place-school" placeholder="예: 영통고등학교" autocomplete="off">
+    </div>
+    <button class="submit-btn" onclick="savePlace()">📍 저장하기</button>
+    <div class="form-note">내 동네를 설정하면 가까운 학교 순으로 책을 볼 수 있어요.</div>
+  </div>
+</section>
+
+<!-- ============ 채팅방 목록 ============ -->
+<section class="screen" id="chats">
+  <div class="topbar">
+    <button class="back-btn" onclick="show('home')" aria-label="홈으로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <div class="tt display">채팅<small>홈화면 › 채팅</small></div>
+  </div>
+  <div class="form-wrap">
+    <div class="results-list" id="chats-list"></div>
+  </div>
+</section>
+
+<!-- ============ 가격 흥정 메시지 ============ -->
+<section class="screen" id="chat">
+  <div class="kb-top">
+    <button class="back-btn" onclick="show(chatReturn)" aria-label="뒤로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <div class="kb-ava-top" id="chat-ava">판</div>
+    <div class="kb-name"><b id="chat-seller">판매자</b><span class="kb-sub">가격 흥정 · 메시지</span></div>
+  </div>
+  <div class="kb-product">
+    <div class="kb-cover" id="chat-cover">📗</div>
+    <div class="kb-pinfo">
+      <div class="kb-ptitle-main" id="chat-title">책 제목</div>
+      <div class="kb-price" id="chat-price">가격</div>
+    </div>
+  </div>
+  <div class="kb-body" id="chat-body"></div>
+  <div class="kb-quick" id="chat-quick"></div>
+  <div class="kb-input">
+    <input type="text" id="chat-input" placeholder="메시지 입력…" autocomplete="off" onkeydown="if(event.key==='Enter'){sendChat()}">
+    <button class="kb-send" onclick="sendChat()" aria-label="보내기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></button>
+  </div>
+</section>
+
+<!-- ============ 장바구니 ============ -->
+<section class="screen" id="cart">
+  <div class="topbar">
+    <button class="back-btn" onclick="show('home')" aria-label="홈으로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <div class="tt display">장바구니<small>홈화면 › 장바구니</small></div>
+  </div>
+  <div class="form-wrap">
+    <div class="results-list" id="cart-list"></div>
+  </div>
+</section>
+
+<!-- ============ 구매신청 완료 ============ -->
+<section class="screen" id="buydone">
+  <div class="done-wrap">
+    <div class="done-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></div>
+    <h2 class="display">구매가 완료되었습니다 🎉</h2>
+    <p class="dsub">판매자와 만나 거래를 마무리하세요.</p>
+    <div class="summary" id="buy-summary"></div>
+    <div class="done-actions">
+      <button class="btn-fill" onclick="openCart()">장바구니로</button>
+      <button class="btn-outline" onclick="show('home')">홈으로</button>
+    </div>
+  </div>
+</section>
+
+<div class="toast-wrap" id="toasts"></div>
+
+<script>
+/* ====== 옵션 데이터 ====== */
+const GRADES=["중1","중2","중3","고1","고2","고3/n수"];
+const SUBJECTS=["국어","영어","수학","사회","과학","역사","기타"];
+const form={grade:null,subject:null,mark:null};
+
+/* 과목별 표지 색/이모지 (책 사진 자리) */
+const SUBJECT_STYLE={
+  "국어":{c:"#C0563E",e:"📕"}, "영어":{c:"#3B6FA8",e:"📘"}, "수학":{c:"#2F7A4D",e:"📗"},
+  "사회":{c:"#C08A2E",e:"🌏"}, "과학":{c:"#7A5AA8",e:"🔬"}, "역사":{c:"#9C6B3E",e:"📜"}, "기타":{c:"#5C5849",e:"📖"}
+};
+function coverStyle(subj){const s=SUBJECT_STYLE[subj]||SUBJECT_STYLE["기타"];
+  return `background:linear-gradient(150deg, color-mix(in srgb,${s.c} 24%, var(--surface)), color-mix(in srgb,${s.c} 9%, var(--surface)))`;}
+function coverEmoji(subj){return (SUBJECT_STYLE[subj]||SUBJECT_STYLE["기타"]).e;}
+function priceText(n){return n===0?"무료 나눔":Number(n).toLocaleString("ko-KR")+"원";}
+/* 커버: 사진 있으면 사진, 없으면 과목 색+이모지 */
+function coverBg(b){return b.photo?"background:#111":coverStyle(b.subject);}
+function coverInner(b){return b.photo?`<img class="cover-img" src="${b.photo}" alt="">`:coverEmoji(b.subject);}
+
+/* 책 사진 업로드 */
+let formPhoto=null;
+function onPhotoPick(input){
+  const file=input.files&&input.files[0];if(!file)return;
+  const reader=new FileReader();
+  reader.onload=function(e){
+    const img=new Image();
+    img.onload=function(){
+      const max=520;let w=img.width,h=img.height;
+      if(w>h&&w>max){h=Math.round(h*max/w);w=max;}else if(h>=w&&h>max){w=Math.round(w*max/h);h=max;}
+      const c=document.createElement("canvas");c.width=w;c.height=h;
+      c.getContext("2d").drawImage(img,0,0,w,h);
+      formPhoto=c.toDataURL("image/jpeg",0.72);
+      const pv=document.getElementById("photoPreview");pv.src=formPhoto;pv.hidden=false;
+      document.getElementById("photoEmpty").hidden=true;
+    };
+    img.src=e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+function resetPhoto(){
+  formPhoto=null;
+  const pv=document.getElementById("photoPreview");if(pv){pv.hidden=true;pv.removeAttribute("src");}
+  const pe=document.getElementById("photoEmpty");if(pe)pe.hidden=false;
+  const fi=document.getElementById("f-photo");if(fi)fi.value="";
+}
+
+/* 등록된 책 저장소 (예시 + 사용자가 올린 책) */
+function seedBooks(){
+  return [
+    {grade:"중2",subject:"수학",title:"쎈(SSEN) 수학 중2-1",pub:"좋은책신사고",mark:"예",price:8000,note:"B단계까지 연필 풀이, 지우면 깨끗해요. 답지 포함!",seller:"민서",city:"수원시",school:"영통고"},
+    {grade:"고1",subject:"수학",title:"개념원리 수학 (상)",pub:"개념원리",mark:"아니오",price:6000,note:"앞부분만 조금 풀었고 뒤는 새 책 수준이에요.",seller:"지후",city:"성남시",school:"분당대진고"},
+    {grade:"고3/n수",subject:"영어",title:"수능특강 영어독해연습",pub:"EBS",mark:"아니오",price:5000,note:"올해 개정판, 필기 거의 없어요.",seller:"서연",city:"용인시",school:"수지고"},
+    {grade:"중3",subject:"국어",title:"비상 중학 국어 3-1",pub:"비상교육",mark:"아니오",price:4000,seller:"도윤",city:"고양시",school:"백석고"},
+    {grade:"중1",subject:"영어",title:"마더텅 중학영어 1학년",pub:"마더텅",mark:"예",price:3000,seller:"하은",city:"부천시",school:"상동고"},
+    {grade:"중2",subject:"과학",title:"오투(O2) 중등 과학 2-2",pub:"비상교육",mark:"아니오",price:7000,seller:"준우",city:"안산시",school:"고잔고"},
+    {grade:"고2",subject:"역사",title:"셀파 해법 한국사",pub:"천재교육",mark:"예",price:5000,seller:"유진",city:"안양시",school:"평촌고"},
+    {grade:"고1",subject:"사회",title:"완자 통합사회",pub:"비상교육",mark:"아니오",price:6000,seller:"태오",city:"평택시",school:"한빛고"}
+  ];
+}
+function saveBooks(){try{localStorage.setItem("chaekmullim_books",JSON.stringify(books));}catch(e){}}
+function loadBooks(){try{const r=localStorage.getItem("chaekmullim_books");if(r)return JSON.parse(r);}catch(e){}return null;}
+let books=loadBooks()||seedBooks();
+
+/* ====== 경기도 시/군 좌표 + 거리 계산 ====== */
+const GYEONGGI=[
+  {name:"수원시",lat:37.2636,lng:127.0286},{name:"성남시",lat:37.4200,lng:127.1265},
+  {name:"고양시",lat:37.6584,lng:126.8320},{name:"용인시",lat:37.2411,lng:127.1776},
+  {name:"부천시",lat:37.5034,lng:126.7660},{name:"안산시",lat:37.3219,lng:126.8309},
+  {name:"안양시",lat:37.3943,lng:126.9568},{name:"남양주시",lat:37.6360,lng:127.2165},
+  {name:"화성시",lat:37.1996,lng:126.8314},{name:"평택시",lat:36.9921,lng:127.1129},
+  {name:"의정부시",lat:37.7381,lng:127.0337},{name:"시흥시",lat:37.3800,lng:126.8031},
+  {name:"파주시",lat:37.7599,lng:126.7800},{name:"김포시",lat:37.6152,lng:126.7156},
+  {name:"광명시",lat:37.4785,lng:126.8646},{name:"광주시",lat:37.4292,lng:127.2551},
+  {name:"군포시",lat:37.3616,lng:126.9352},{name:"오산시",lat:37.1499,lng:127.0772},
+  {name:"이천시",lat:37.2720,lng:127.4350},{name:"양주시",lat:37.7853,lng:127.0456},
+  {name:"안성시",lat:37.0080,lng:127.2797},{name:"구리시",lat:37.5943,lng:127.1296},
+  {name:"포천시",lat:37.8949,lng:127.2003},{name:"의왕시",lat:37.3446,lng:126.9683},
+  {name:"하남시",lat:37.5392,lng:127.2149},{name:"여주시",lat:37.2983,lng:127.6370},
+  {name:"동두천시",lat:37.9036,lng:127.0606},{name:"과천시",lat:37.4292,lng:126.9877},
+  {name:"가평군",lat:37.8315,lng:127.5105},{name:"연천군",lat:38.0966,lng:127.0748},
+  {name:"양평군",lat:37.4917,lng:127.4874}
+];
+function haversine(a,b){const R=6371,r=x=>x*Math.PI/180;const dLat=r(b.lat-a.lat),dLng=r(b.lng-a.lng);const s=Math.sin(dLat/2)**2+Math.cos(r(a.lat))*Math.cos(r(b.lat))*Math.sin(dLng/2)**2;return Math.round(R*2*Math.atan2(Math.sqrt(s),Math.sqrt(1-s)));}
+function cityCoord(name){return GYEONGGI.find(c=>c.name===name);}
+function distanceKm(cityA,cityB){const a=cityCoord(cityA),b=cityCoord(cityB);if(!a||!b)return null;return haversine(a,b);}
+
+/* ====== 내 동네·학교 (로그인 사용자별) ====== */
+let myPlace={city:null,school:null};
+function placeKey(){return "chaekmullim_place_"+(cartUid||"guest");}
+function loadPlace(){try{const r=localStorage.getItem(placeKey());if(r)return JSON.parse(r);}catch(e){}return {city:null,school:null};}
+function savePlaceObj(){try{localStorage.setItem(placeKey(),JSON.stringify(myPlace));}catch(e){}}
+function updatePlaceChip(){
+  const el=document.getElementById("placeChip");if(!el)return;
+  if(myPlace&&myPlace.city){el.textContent="📍 "+((myPlace.school?myPlace.school+" · ":"")+myPlace.city);}
+  else{el.textContent="📍 내 동네 설정";}
+}
+function openPlace(){
+  const sel=document.getElementById("place-city");
+  if(sel && sel.options.length<=1){
+    sel.innerHTML='<option value="">시/군 선택</option>'+GYEONGGI.map(c=>`<option value="${c.name}">${c.name}</option>`).join("");
+  }
+  sel.value=(myPlace&&myPlace.city)||"";
+  document.getElementById("place-school").value=(myPlace&&myPlace.school)||"";
+  show("place");
+}
+function savePlace(){
+  const city=document.getElementById("place-city").value;
+  const school=document.getElementById("place-school").value.trim();
+  if(!city){toast("지역(시/군)을 선택해주세요");return;}
+  myPlace={city:city,school:school};
+  savePlaceObj();updatePlaceChip();
+  toast("내 동네를 저장했어요 📍");
+  show("home");
+}
+function detectLocation(){
+  if(!navigator.geolocation){toast("이 기기는 위치를 지원하지 않아요");return;}
+  toast("현재 위치를 확인 중…");
+  navigator.geolocation.getCurrentPosition(function(pos){
+    const me={lat:pos.coords.latitude,lng:pos.coords.longitude};
+    let best=null,bestD=Infinity;
+    GYEONGGI.forEach(c=>{const d=haversine(me,c);if(d<bestD){bestD=d;best=c;}});
+    if(best){document.getElementById("place-city").value=best.name;toast("가장 가까운 지역: "+best.name);}
+  },function(){toast("위치 접근이 안 됐어요. 직접 선택해주세요");});
+}
+function goSell(){
+  requireLogin(function(){
+    if(!myPlace||!myPlace.city){toast("먼저 학교를 선택해주세요");openSchool("sell");return;}
+    show("sell");
+  });
+}
+
+/* ====== 경기도 고등학교 목록 + 학교 검색 ====== */
+const SCHOOL_DATA={
+  "수원시":["수원고","수성고","매탄고","영통고","청명고","창현고","유신고","태장고","권선고","조원고","천천고","수일고","광교고","동원고"],
+  "성남시":["분당고","서현고","낙생고","이매고","야탑고","분당대진고","보평고","판교고","성남고","풍생고","효성고","성일고","돌마고","늘푸른고","태원고"],
+  "용인시":["수지고","풍덕고","서원고","성복고","용인고","태성고","보정고","죽전고","초당고","백현고","흥덕고","구성고","신봉고","상현고","용인외고"],
+  "고양시":["백석고","저동고","무원고","일산동고","주엽고","정발고","백양고","대화고","저현고","화정고","능곡고","고양국제고","안곡고","세원고","성사고"],
+  "부천시":["부천고","상동고","부천여고","소명여고","부명고","정명고","도당고","원미고","심원고","중원고","중동고"],
+  "안산시":["고잔고","안산고","성포고","부곡고","원곡고","초지고","송호고","안산동산고","양지고","경안고"],
+  "안양시":["평촌고","신성고","안양고","백영고","부흥고","동안고","인덕원고","관양고","안양외고","양명고","근명고","성문고"],
+  "남양주시":["별내고","다산고","진접고","오남고","청학고","판곡고","광동고","퇴계원고","덕소고"],
+  "화성시":["봉담고","나루고","병점고","삼괴고","동탄국제고","동탄고","반송고","예당고","능동고","화성고","향남고"],
+  "평택시":["한빛고","비전고","안중고","평택고","청담고","태광고","신한고","한광고","이충고"],
+  "의정부시":["의정부고","의정부여고","경민고","발곡고","부용고","상우고","호원고","의정부광동고"],
+  "시흥시":["시흥고","함현고","정왕고","군서고","은행고","매화고","신천고","배곧고","서해고","소래고"],
+  "김포시":["김포고","통진고","사우고","장기고","마송고","김포제일고","운양고","고촌고"],
+  "파주시":["문산고","운정고","파주고","지산고","봉일천고","한민고"],
+  "광명시":["광명고","광남고","진성고","명문고","충현고","소하고","운산고"],
+  "광주시":["광주고","경화여고","광주중앙고","곤지암고","태전고","송정고"],
+  "군포시":["군포고","산본고","부곡중앙고","용호고","흥진고","당정고","수리고"],
+  "오산시":["오산고","성호고","세마고","운암고","매홀고"],
+  "이천시":["이천고","이천제일고","양정여고","효양고"],
+  "안성시":["안성고","안법고","안청고"],
+  "구리시":["구리고","인창고","토평고","갈매고","교문고"],
+  "포천시":["포천고","일동고","영북고","송우고","포천여고"],
+  "의왕시":["백운고","모락고","갈뫼고","우성고"],
+  "하남시":["하남고","신장고","풍산고","남한고"],
+  "여주시":["여주고","여주제일고","세종고","여흥고"],
+  "동두천시":["동두천고","동두천외고","신흥고","보영여고"],
+  "과천시":["과천고","과천중앙고","과천외고"],
+  "가평군":["가평고","조종고","청평고"],
+  "연천군":["연천고","전곡고"],
+  "양평군":["양평고","양일고","양서고"]
+};
+/* 짧은 이름 → 전체 이름 (OO고 → OO고등학교) */
+function fullSchool(n){
+  if(!n)return "";
+  if(/학교$/.test(n))return n;                                  // 이미 전체 이름
+  if(/여고$/.test(n))return n.replace(/여고$/,"여자고등학교");
+  if(/외고$/.test(n))return n.replace(/외고$/,"외국어고등학교");
+  if(/국제고$/.test(n))return n.replace(/국제고$/,"국제고등학교");
+  if(/과학고$/.test(n))return n.replace(/과학고$/,"과학고등학교");
+  if(/예고$/.test(n))return n.replace(/예고$/,"예술고등학교");
+  if(/체고$/.test(n))return n.replace(/체고$/,"체육고등학교");
+  if(/공고$/.test(n))return n.replace(/공고$/,"공업고등학교");
+  if(/고$/.test(n))return n.replace(/고$/,"고등학교");
+  return n+"고등학교";
+}
+const SCHOOLS=[];
+Object.keys(SCHOOL_DATA).forEach(city=>SCHOOL_DATA[city].forEach(n=>SCHOOLS.push({name:n,full:fullSchool(n),city:city})));
+
+let pendingSchool=null;
+let scList=[], scSelected=null, schoolReturn="welcome";
+function openSchool(from){
+  schoolReturn=from||"welcome";
+  scList=[];scSelected=null;
+  document.getElementById("sc-q").value="";
+  document.getElementById("sc-results").innerHTML='<div class="sc-empty">학교를 검색해주세요.</div>';
+  show("school");
+  setTimeout(()=>{const i=document.getElementById("sc-q");if(i)i.focus();},80);
+}
+function searchSchool(){
+  const q=document.getElementById("sc-q").value.trim();
+  if(!q){document.getElementById("sc-results").innerHTML='<div class="sc-empty">학교명을 입력해주세요.</div>';return;}
+  scList=SCHOOLS.filter(s=>s.full.indexOf(q)>=0 || s.name.indexOf(q)>=0);
+  scSelected=null;
+  renderSchoolResults();
+}
+function renderSchoolResults(){
+  const box=document.getElementById("sc-results");
+  if(scList.length===0){box.innerHTML='<div class="sc-empty">검색 결과가 없어요. 다른 이름으로 검색해보세요.</div>';return;}
+  box.innerHTML=scList.map((s,i)=>`
+    <div class="sc-row ${scSelected===i?'on':''}" onclick="selectSchoolRow(${i})">
+      <span class="sc-radio"></span>
+      <span class="sc-name">${escapeHtml(s.full)}</span>
+      <span class="sc-addr">경기도 ${escapeHtml(s.city)}</span>
+    </div>`).join("");
+}
+function selectSchoolRow(i){scSelected=i;renderSchoolResults();}
+function confirmSchool(){
+  if(scSelected==null){toast("학교를 선택해주세요");return;}
+  const s=scList[scSelected];
+  if(schoolReturn==="welcome"){
+    pendingSchool={name:s.full,city:s.city};
+    const el=document.getElementById("wc-school");if(el)el.textContent="🏫 "+s.full;
+    show("welcome");
+  }else{
+    myPlace={city:s.city,school:s.full};
+    savePlaceObj();updatePlaceChip();
+    if(schoolReturn==="mypage")renderMyPage();
+    show(schoolReturn);
+  }
+}
+
+/* ====== 화면 전환 ====== */
+function displayScreen(id){
+  document.querySelectorAll(".screen").forEach(s=>{
+    const on=s.id===id;
+    s.classList.toggle("active",on);
+    if(on)s.scrollTop=0;   // 새 화면은 항상 맨 위에서 시작
+  });
+  const mb=document.getElementById("menuBtn");if(mb)mb.hidden=(id!=="home");  // 메뉴는 홈에서만
+  updateAuthArea();
+}
+let curScreen="welcome";
+function show(id){
+  displayScreen(id);
+  if(id!==curScreen){
+    curScreen=id;
+    try{history.pushState({screen:id},"");}catch(e){}
+  }
+}
+/* 기기/브라우저 뒤로가기 → 이전 화면으로 */
+window.addEventListener("popstate",function(e){
+  const id=(e.state&&e.state.screen)||"welcome";
+  curScreen=id;
+  displayScreen(id);
+});
+try{history.replaceState({screen:"welcome"},"");}catch(e){}
+
+/* ====== 학년/과목 버튼 생성 ====== */
+function buildPills(){
+  document.getElementById("grade-row").innerHTML=
+    GRADES.map(g=>`<button class="pill" data-v="${g}" onclick="pickOne(this,'grade')">${g}</button>`).join("");
+  document.getElementById("subject-row").innerHTML=
+    SUBJECTS.map(s=>`<button class="pill" data-v="${s}" onclick="pickOne(this,'subject')">${s}</button>`).join("");
+}
+function pickOne(el,key){
+  form[key]=el.dataset.v;
+  el.parentElement.querySelectorAll(".pill").forEach(p=>p.classList.remove("on"));
+  el.classList.add("on");
+}
+function pickMark(el){
+  form.mark=el.dataset.v;
+  document.getElementById("mark-row").querySelectorAll(".pill").forEach(p=>p.classList.remove("on"));
+  el.classList.add("on");
+}
+
+/* ====== 가격 입력 ====== */
+function formatPrice(el){
+  let n=el.value.replace(/[^0-9]/g,"");
+  el.value=n?Number(n).toLocaleString("ko-KR"):"";
+}
+function setPrice(v){
+  const el=document.getElementById("f-price");
+  el.value=v?v.toLocaleString("ko-KR"):"0";
+}
+
+/* ====== 등록 ====== */
+function submitBook(){
+  const title=document.getElementById("f-title");
+  const pub=document.getElementById("f-pub");
+  const price=document.getElementById("f-price");
+  [title,pub,price].forEach(i=>i.classList.remove("err"));
+
+  if(!form.grade){toast("학년을 선택해주세요");return;}
+  if(!form.subject){toast("과목을 선택해주세요");return;}
+  if(!title.value.trim()){toast("책 제목을 입력해주세요");title.classList.add("err");title.focus();return;}
+  if(!pub.value.trim()){toast("출판사를 입력해주세요");pub.classList.add("err");pub.focus();return;}
+  if(!form.mark){toast("필기/풀이 흔적 여부를 선택해주세요");return;}
+  if(price.value.trim()===""){toast("원하는 가격을 입력해주세요");price.classList.add("err");price.focus();return;}
+
+  const priceNum=Number(price.value.replace(/[^0-9]/g,""))||0;
+  const priceLabel=priceText(priceNum);
+  const note=document.getElementById("f-note").value.trim();
+
+  /* 등록한 책을 저장소에 추가 → '책 찾아보기' 검색 결과에 실제로 나타남 */
+  books.unshift({grade:form.grade,subject:form.subject,title:title.value.trim(),pub:pub.value.trim(),mark:form.mark,price:priceNum,note:note,seller:(currentUser&&currentUser.name)||"나",city:(myPlace&&myPlace.city)||"",school:(myPlace&&myPlace.school)||"",photo:formPhoto||null});
+  saveBooks();
+
+  document.getElementById("summary").innerHTML=`
+    <div class="srow"><span class="sk">학년</span><span class="sv">${form.grade}</span></div>
+    <div class="srow"><span class="sk">과목</span><span class="sv">${form.subject}</span></div>
+    <div class="srow"><span class="sk">책 제목</span><span class="sv">${escapeHtml(title.value.trim())}</span></div>
+    <div class="srow"><span class="sk">출판사</span><span class="sv">${escapeHtml(pub.value.trim())}</span></div>
+    <div class="srow"><span class="sk">필기/풀이</span><span class="sv">${form.mark==="예"?"✏️ 필기 있음":"✨ 깨끗함"}</span></div>
+    <div class="srow"><span class="sk">가격</span><span class="sv price">${priceLabel}</span></div>
+    ${note?`<div class="srow"><span class="sk">특이사항</span><span class="sv">${escapeHtml(note)}</span></div>`:""}`;
+  show("done");
+}
+function resetForm(){
+  form.grade=form.subject=form.mark=null;
+  ["f-title","f-pub","f-price","f-note"].forEach(id=>{const e=document.getElementById(id);e.value="";e.classList.remove("err");});
+  document.querySelectorAll("#sell .pill").forEach(p=>p.classList.remove("on"));
+  resetPhoto();
+}
+function escapeHtml(s){return s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+
+/* ====== 토스트 ====== */
+function toast(msg){
+  const w=document.getElementById("toasts");
+  const el=document.createElement("div");el.className="toast";el.textContent=msg;
+  w.appendChild(el);
+  setTimeout(()=>{el.style.transition="opacity .3s,transform .3s";el.style.opacity="0";el.style.transform="translateY(10px)";setTimeout(()=>el.remove(),300);},2200);
+}
+
+/* ====== 가격 제안하기 ====== */
+let offerBook=null;
+function roundTo(n,unit){return Math.round(n/unit)*unit;}
+function openOffer(i){
+  const b=lastResults[i];if(!b)return;
+  offerBook=b;
+  document.getElementById("offer-book").innerHTML=`
+    <div class="ob-cover" style="${coverBg(b)}">${coverInner(b)}</div>
+    <div class="ob-info">
+      <div class="ob-title">${escapeHtml(b.title)}</div>
+      <div class="ob-meta">${b.grade} · ${b.subject} · ${escapeHtml(b.pub)}</div>
+      <div class="ob-ask"><span class="lbl">판매가</span><span class="val">${priceText(b.price)}</span></div>
+    </div>`;
+
+  /* 판매가 기준 빠른 제안 금액 */
+  const ask=b.price, opts=[];
+  if(ask>0){
+    [1,0.9,0.8,0.7].forEach(r=>{const v=roundTo(ask*r,500);if(v>0&&!opts.includes(v))opts.push(v);});
+  }else{opts.push(0);}
+  document.getElementById("offer-quick").innerHTML=opts.map(v=>
+    `<button type="button" onclick="setOfferPrice(${v})">${v===0?"무료로":v.toLocaleString("ko-KR")+"원"}</button>`).join("");
+
+  const inp=document.getElementById("offer-price");
+  inp.value="";
+  document.getElementById("offer-diff").textContent="";
+  document.getElementById("offer-diff").className="offer-diff";
+  show("offer");
+  setTimeout(()=>inp.focus(),80);
+}
+function setOfferPrice(v){
+  const el=document.getElementById("offer-price");
+  el.value=v?v.toLocaleString("ko-KR"):"0";
+  updateOfferDiff();
+}
+function updateOfferDiff(){
+  if(!offerBook)return;
+  const raw=document.getElementById("offer-price").value.replace(/[^0-9]/g,"");
+  const diffEl=document.getElementById("offer-diff");
+  if(raw===""){diffEl.textContent="";diffEl.className="offer-diff";return;}
+  const my=Number(raw), ask=offerBook.price, d=ask-my;
+  if(d>0){diffEl.className="offer-diff lower";diffEl.textContent=`판매가보다 ${d.toLocaleString("ko-KR")}원 낮게 제안해요`;}
+  else if(d===0){diffEl.className="offer-diff same";diffEl.textContent="판매가와 같은 금액이에요";}
+  else{diffEl.className="offer-diff higher";diffEl.textContent=`판매가보다 ${(-d).toLocaleString("ko-KR")}원 높아요`;}
+}
+function sendOffer(){
+  const inp=document.getElementById("offer-price");
+  if(inp.value.trim()===""){toast("제안할 가격을 입력해주세요");inp.classList.add("err");inp.focus();return;}
+  inp.classList.remove("err");
+  const my=Number(inp.value.replace(/[^0-9]/g,""))||0;
+  document.getElementById("offer-summary").innerHTML=`
+    <div class="srow"><span class="sk">책 이름</span><span class="sv">${escapeHtml(offerBook.title)}</span></div>
+    <div class="srow"><span class="sk">판매가</span><span class="sv">${priceText(offerBook.price)}</span></div>
+    <div class="srow"><span class="sk">제안 가격</span><span class="sv price">${priceText(my)}</span></div>`;
+  show("offerdone");
+}
+
+/* ====== 테마 ====== */
+function curTheme(){const t=document.documentElement.getAttribute("data-theme");return t||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light");}
+function setIcon(){
+  const dark=curTheme()==="dark";
+  document.getElementById("themeBtn").innerHTML=dark
+    ?'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>'
+    :'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>';
+}
+function toggleTheme(){document.documentElement.setAttribute("data-theme",curTheme()==="dark"?"light":"dark");setIcon();}
+
+/* ====== 책 찾아보기(검색) ====== */
+const search={grade:null,subject:null,mark:null};
+function buildSearchPills(){
+  document.getElementById("grade-row-b").innerHTML=
+    GRADES.map(g=>`<button class="pill" data-v="${g}" onclick="pickSearch(this,'grade')">${g}</button>`).join("");
+  document.getElementById("subject-row-b").innerHTML=
+    SUBJECTS.map(s=>`<button class="pill" data-v="${s}" onclick="pickSearch(this,'subject')">${s}</button>`).join("");
+}
+function toggleOne(el,key,store){
+  if(store[key]===el.dataset.v){          // 이미 선택된 걸 다시 누르면 해제
+    store[key]=null;el.classList.remove("on");return;
+  }
+  store[key]=el.dataset.v;
+  el.parentElement.querySelectorAll(".pill").forEach(p=>p.classList.remove("on"));
+  el.classList.add("on");
+}
+function pickSearch(el,key){toggleOne(el,key,search);}
+function pickSearchMark(el){toggleOne(el,"mark",search);}
+
+let searchResults=[];
+let distFilter="all";
+function doSearch(){
+  const title=document.getElementById("s-title").value.trim();
+
+  /* 조건에 맞는 책 걸러내기 */
+  searchResults=books.filter(b=>{
+    if(search.grade && b.grade!==search.grade)return false;
+    if(search.subject && b.subject!==search.subject)return false;
+    if(search.mark && b.mark!==search.mark)return false;
+    if(title && !b.title.toLowerCase().includes(title.toLowerCase()))return false;
+    return true;
+  });
+
+  /* 상단 검색조건 요약 */
+  const chips=[];
+  if(search.grade)chips.push(search.grade);
+  if(search.subject)chips.push(search.subject);
+  if(title)chips.push("“"+escapeHtml(title)+"”");
+  if(search.mark)chips.push(search.mark==="예"?"✏️ 필기있음":"✨ 깨끗함");
+  document.getElementById("search-recap").innerHTML=`
+    <div class="rc-label">이 조건으로 검색했어요</div>
+    <div class="rc-chips">${
+      chips.length ? chips.map(c=>`<span class="rc-chip">${c}</span>`).join("")
+                   : `<span class="rc-chip none">전체 검색 (조건 없음)</span>`
+    }</div>`;
+
+  distFilter="all";
+  renderResultsList();
+  show("results");
+}
+function setDist(v){distFilter=v;renderResultsList();}
+function distLabel(km){return km===0?"우리 지역":km+"km";}
+function renderResultsList(){
+  const hasLoc=!!(myPlace&&myPlace.city);
+  let arr=searchResults.map(b=>Object.assign({},b));
+  arr.forEach(b=>{b._dist=hasLoc?distanceKm(myPlace.city,b.city):null;});
+  if(hasLoc && distFilter!=="all"){
+    const lim=Number(distFilter);
+    arr=arr.filter(b=>b._dist!=null && b._dist<=lim);
+  }
+  if(hasLoc){arr.sort((a,b)=>((a._dist==null?99999:a._dist)-(b._dist==null?99999:b._dist)));}
+  lastResults=arr;
+
+  const list=document.getElementById("results-list");
+  let head;
+  if(hasLoc){
+    head=`<div class="dist-chips">
+      <button class="dchip ${distFilter==='all'?'on':''}" onclick="setDist('all')">전체</button>
+      <button class="dchip ${distFilter==='10'?'on':''}" onclick="setDist('10')">10km 이내</button>
+      <button class="dchip ${distFilter==='30'?'on':''}" onclick="setDist('30')">30km 이내</button>
+      <button class="dchip ${distFilter==='60'?'on':''}" onclick="setDist('60')">60km 이내</button>
+      </div>
+      <div class="rc-count" style="margin:8px 0 0">${escapeHtml(myPlace.city)} 기준 · 가까운 순 · <b>${arr.length}</b>권</div>`;
+  }else{
+    head=`<div class="loc-hint">📍 <b onclick="openPlace()">내 동네를 설정</b>하면 가까운 학교 순으로, 얼마나 먼 곳인지 거리까지 볼 수 있어요.</div>
+      <div class="rc-count" style="margin:8px 0 0">총 <b>${arr.length}</b>권</div>`;
+  }
+
+  if(arr.length===0){
+    list.innerHTML=head+`<div class="no-result">
+      <div class="nr-emoji">🔍</div>
+      <div class="nr-t">조건에 맞는 책이 없어요</div>
+      <p>거리 필터를 넓히거나, 검색 조건을 바꿔보세요.</p></div>`;
+    return;
+  }
+  list.innerHTML=head+arr.map((b,i)=>`
+    <div class="result-card">
+      <div class="rcard-cover" style="${coverBg(b)}">
+        <span class="subj">${b.subject}</span>${coverInner(b)}
+      </div>
+      <div class="rcard-info">
+        <div class="r"><span class="k">책 이름</span><span class="v">${escapeHtml(b.title)}</span></div>
+        <div class="r"><span class="k">출판사</span><span class="v">${escapeHtml(b.pub)}</span></div>
+        <div class="r"><span class="k">가격</span><span class="v price">${priceText(b.price)}</span></div>
+        <div class="rcard-meta">
+          <span class="mtag">${b.grade}</span>
+          <span class="mtag">${b.mark==="예"?"✏️ 필기있음":"✨ 깨끗함"}</span>
+          ${b.city?`<span class="mtag loc">📍 ${escapeHtml((b.school?fullSchool(b.school)+" ":"")+b.city)}${b._dist!=null?(" · "+distLabel(b._dist)):""}</span>`:""}
+        </div>
+        ${b.note?`<div class="rcard-note">📝 ${escapeHtml(b.note)}</div>`:""}
+      </div>
+      <div class="rcard-actions">
+        <button class="rcard-btn ask" onclick="requireLogin(function(){openChat(${i})})">가격 흥정</button>
+        <button class="rcard-btn buy" onclick="requireLogin(function(){addToCart(${i})})">장바구니 추가</button>
+      </div>
+    </div>`).join("");
+}
+let lastResults=[];
+function buyBook(i){
+  const b=lastResults[i];if(!b)return;
+  document.getElementById("buy-summary").innerHTML=`
+    <div class="srow"><span class="sk">신청한 책</span><span class="sv">${escapeHtml(b.title)}</span></div>
+    <div class="srow"><span class="sk">출판사</span><span class="sv">${escapeHtml(b.pub)}</span></div>
+    <div class="srow"><span class="sk">가격</span><span class="sv price">${priceText(b.price)}</span></div>`;
+  show("buydone");
+}
+function resetSearch(){
+  search.grade=search.subject=search.mark=null;
+  document.getElementById("s-title").value="";
+  document.querySelectorAll("#browse .pill").forEach(p=>p.classList.remove("on"));
+}
+
+/* ====== 사용자(이름 기반, 구글 없이) / 게이트 ====== */
+let currentUser=null;   // {name, uid, studentId} 또는 null
+let pendingStudentId=null;
+function setUser(u){
+  currentUser=(u&&u.name)?u:null;
+  cartUid=currentUser?(currentUser.uid||"user"):null;
+  cart=loadCart();
+  myPlace=loadPlace();
+  updateCartCount();
+  updatePlaceChip();
+  updateAuthArea();
+}
+function updateAuthArea(){
+  const g=document.getElementById("homeGreet");
+  if(g)g.textContent=currentUser?("반가워요, "+currentUser.name+"님 🙌"):"";
+}
+/* 로그인(이름 설정)이 필요한 동작을 감싸는 함수 */
+function requireLogin(cb){
+  if(currentUser){cb();}
+  else{toast("먼저 이름을 설정해주세요");show("welcome");}
+}
+
+/* 로컬 프로필 */
+function loadProfile(){try{return JSON.parse(localStorage.getItem("chaekmullim_profile")||"null");}catch(e){return null;}}
+function saveProfileObj(p){try{localStorage.setItem("chaekmullim_profile",JSON.stringify(p));}catch(e){}}
+function startApp(){
+  const name=document.getElementById("wc-name").value.trim();
+  if(!name){toast("이름을 입력해주세요");document.getElementById("wc-name").focus();return;}
+  if(!pendingSchool||!pendingSchool.name){toast("학교를 선택해주세요");return;}
+  const sid=document.getElementById("wc-sid-input").value.trim();
+  let p=loadProfile()||{};
+  if(!p.uid)p.uid="u"+Date.now()+Math.floor(Math.random()*1000);
+  p.name=name;
+  p.studentId=sid||"";
+  p.school=pendingSchool.name;
+  p.city=pendingSchool.city;
+  saveProfileObj(p);
+  try{sessionStorage.setItem("nbnbs_login","1");}catch(e){}   // 이번 세션 로그인 표시
+  setUser({name:p.name,uid:p.uid,studentId:p.studentId});
+  myPlace={city:pendingSchool.city,school:pendingSchool.name};
+  savePlaceObj();updatePlaceChip();
+  show("home");
+}
+function openProfile(){
+  const p=loadProfile()||{};
+  document.getElementById("wc-name").value=p.name||"";
+  document.getElementById("wc-sid-input").value=p.studentId||"";
+  if(myPlace&&myPlace.school){pendingSchool={name:myPlace.school,city:myPlace.city};document.getElementById("wc-school").textContent="🏫 "+myPlace.school;}
+  else{pendingSchool=null;document.getElementById("wc-school").textContent="🏫 학교 선택";}
+  show("welcome");
+}
+function logout(){ openProfile(); }
+
+/* 마이페이지 */
+function renderMyPage(){
+  const name=(currentUser&&currentUser.name)||"이름 없음";
+  document.getElementById("mp-name").textContent=name;
+  document.getElementById("mp-avatar").textContent=name[0]||"나";
+  const sid=(currentUser&&currentUser.studentId)||"";
+  const school=(myPlace&&myPlace.school)||"";
+  const city=(myPlace&&myPlace.city)||"";
+  const none='<span style="color:var(--ink-faint);font-weight:500">미설정</span>';
+  document.getElementById("mp-info").innerHTML=`
+    <div class="srow"><span class="sk">이름</span><span class="sv">${escapeHtml(name)}</span></div>
+    <div class="srow"><span class="sk">학번</span><span class="sv">${sid?escapeHtml(sid):'<span style="color:var(--ink-faint);font-weight:500">미등록</span>'}</span></div>
+    <div class="srow"><span class="sk">학교</span><span class="sv">${school?escapeHtml(school):none}</span></div>
+    <div class="srow"><span class="sk">지역</span><span class="sv">${city?escapeHtml(city):none}</span></div>`;
+}
+function openMyPage(){ renderMyPage(); show("mypage"); }
+
+/* ====== 장바구니 ====== */
+let cart=[];
+let cartUid=null;
+function cartKey(){return "chaekmullim_cart_"+(cartUid||"guest");}
+function loadCart(){try{const r=localStorage.getItem(cartKey());if(r)return JSON.parse(r);}catch(e){}return [];}
+function saveCart(){try{localStorage.setItem(cartKey(),JSON.stringify(cart));}catch(e){}}
+function updateCartCount(){const el=document.getElementById("cartCount");if(el)el.textContent=cart.length;}
+function addToCart(i){
+  const b=lastResults[i];if(!b)return;
+  if(cart.some(x=>x.title===b.title&&x.pub===b.pub)){toast("이미 장바구니에 있어요");return;}
+  cart.push(b);saveCart();updateCartCount();
+  toast("장바구니에 담았어요 🛒");
+}
+function removeFromCart(idx){cart.splice(idx,1);saveCart();updateCartCount();renderCart();}
+function openCart(){ requireLogin(function(){ renderCart(); show("cart"); }); }
+function renderCart(){
+  const list=document.getElementById("cart-list");
+  if(cart.length===0){
+    list.innerHTML=`<div class="no-result"><div class="nr-emoji">🛒</div><div class="nr-t">장바구니가 비어있어요</div><p>‘책 찾아보기’에서 마음에 드는 책을 담아보세요.</p></div>`;
+    return;
+  }
+  const total=cart.reduce((s,b)=>s+(b.price||0),0);
+  list.innerHTML=cart.map((b,idx)=>`
+    <div class="result-card">
+      <div class="rcard-cover" style="${coverBg(b)}"><span class="subj">${b.subject}</span>${coverInner(b)}</div>
+      <div class="rcard-info">
+        <div class="r"><span class="k">책 이름</span><span class="v">${escapeHtml(b.title)}</span></div>
+        <div class="r"><span class="k">출판사</span><span class="v">${escapeHtml(b.pub)}</span></div>
+        <div class="r"><span class="k">가격</span><span class="v price">${priceText(b.price)}</span></div>
+        <div class="rcard-meta"><span class="mtag">${b.grade}</span><span class="mtag">${b.mark==="예"?"✏️ 필기있음":"✨ 깨끗함"}</span></div>
+      </div>
+      <div class="rcard-actions">
+        <button class="rcard-btn buy" onclick="buyPurchase(${idx})">구매하기</button>
+        <button class="rcard-btn" style="color:var(--danger);border-color:color-mix(in srgb,var(--danger) 30%,var(--line))" onclick="removeFromCart(${idx})">빼기</button>
+      </div>
+    </div>`).join("")
+    +`<div class="cart-total">합계<b>${priceText(total)}</b></div>`;
+}
+
+/* ====== 장바구니에서 구매하기 ====== */
+function buyPurchase(idx){
+  const b=cart[idx];if(!b)return;
+  document.getElementById("buy-summary").innerHTML=`
+    <div class="srow"><span class="sk">구매한 책</span><span class="sv">${escapeHtml(b.title)}</span></div>
+    <div class="srow"><span class="sk">판매자</span><span class="sv">${escapeHtml(b.seller||"판매자")}</span></div>
+    <div class="srow"><span class="sk">가격</span><span class="sv price">${priceText(b.price)}</span></div>`;
+  cart.splice(idx,1);saveCart();updateCartCount();
+  show("buydone");
+}
+
+/* ====== 가격 흥정 메시지 ====== */
+let chatCtx=null;
+let chatReturn="results";   // 채팅에서 뒤로가면 돌아갈 화면
+let lastRooms=[];
+const CHAT_QUICK=["안녕하세요! 이 책 살 수 있을까요?","가격 조금만 조정 가능할까요?","직거래 가능한가요?"];
+function clockKR(t){const d=new Date(t),h=d.getHours(),m=String(d.getMinutes()).padStart(2,"0");const ap=h<12?"오전":"오후",h12=((h+11)%12)+1;return ap+" "+h12+":"+m;}
+function chatBookKey(b){return (b.title+"|"+b.pub).replace(/[^0-9A-Za-z가-힣]/g,"_");}
+function chatStoreKey(b){return "chaekmullim_chat_"+(cartUid||"guest")+"_"+chatBookKey(b);}
+function loadThread(b){try{const r=localStorage.getItem(chatStoreKey(b));if(r){const o=JSON.parse(r);return Array.isArray(o)?o:(o.msgs||[]);}}catch(e){}return [];}
+function saveThread(){if(!chatCtx)return;try{localStorage.setItem(chatStoreKey(chatCtx.book),JSON.stringify({book:chatCtx.book,msgs:chatCtx.msgs}));}catch(e){}}
+
+/* 홈 → 채팅방 목록 */
+function openChats(){ requireLogin(function(){ renderChats(); show("chats"); }); }
+function renderChats(){
+  const prefix="chaekmullim_chat_"+(cartUid||"guest")+"_";
+  lastRooms=[];
+  for(let i=0;i<localStorage.length;i++){
+    const k=localStorage.key(i);
+    if(k && k.indexOf(prefix)===0){
+      try{
+        const o=JSON.parse(localStorage.getItem(k));
+        if(o && o.book && o.msgs && o.msgs.length){
+          lastRooms.push({book:o.book, last:o.msgs[o.msgs.length-1]});
+        }
+      }catch(e){}
+    }
+  }
+  lastRooms.sort((a,b)=>(b.last.at||0)-(a.last.at||0));
+  const list=document.getElementById("chats-list");
+  if(lastRooms.length===0){
+    list.innerHTML=`<div class="no-result"><div class="nr-emoji">💬</div><div class="nr-t">진행 중인 채팅이 없어요</div><p>‘책 찾아보기’에서 책의 ‘가격 흥정’을 눌러 대화를 시작해보세요.</p></div>`;
+    return;
+  }
+  list.innerHTML=lastRooms.map((r,idx)=>`
+    <div class="chatroom" onclick="openChatRoom(${idx})">
+      <div class="cr-cover" style="${coverBg(r.book)}">${coverInner(r.book)}</div>
+      <div class="cr-info">
+        <div class="cr-top"><b>${escapeHtml(r.book.seller||"판매자")}</b><span class="cr-time">${clockKR(r.last.at)}</span></div>
+        <div class="cr-title">${escapeHtml(r.book.title)}</div>
+        <div class="cr-last">${escapeHtml(r.last.t)}</div>
+      </div>
+    </div>`).join("");
+}
+function openChatRoom(idx){const r=lastRooms[idx];if(r)openChatBook(r.book,"chats");}
+
+function openChat(i){const b=lastResults[i];if(b)openChatBook(b,"results");}
+function openChatBook(b, from){
+  chatReturn=from||"results";
+  const seller=b.seller||"판매자";
+  chatCtx={book:b,seller,msgs:loadThread(b)};
+  document.getElementById("chat-seller").textContent=seller;
+  document.getElementById("chat-ava").textContent=seller[0];
+  const cover=document.getElementById("chat-cover");
+  cover.setAttribute("style",coverBg(b));
+  cover.innerHTML=coverInner(b);
+  document.getElementById("chat-title").textContent=b.title;
+  document.getElementById("chat-price").textContent=b.grade+" · "+b.subject+" · "+priceText(b.price);
+  document.getElementById("chat-quick").innerHTML=CHAT_QUICK.map(q=>`<button onclick="sendChat('${q.replace(/'/g,"\\'")}')">${q}</button>`).join("");
+  document.getElementById("chat-input").value="";
+  renderChat();
+  show("chat");
+  setTimeout(()=>{const inp=document.getElementById("chat-input");if(inp)inp.focus();},80);
+}
+function renderChat(){
+  if(!chatCtx)return;
+  const body=document.getElementById("chat-body");
+  const head=`<div class="kb-sys">${escapeHtml(chatCtx.seller)} 님과의 대화예요.\n가격을 자유롭게 흥정해보세요.</div>`;
+  body.innerHTML=head+chatCtx.msgs.map(m=>{
+    if(m.who==="me"){
+      return `<div class="kb-row me"><div class="kb-time">${clockKR(m.at)}</div><div class="kb-bubwrap"><div class="kb-bubble">${escapeHtml(m.t)}</div></div></div>`;
+    }
+    return `<div class="kb-row them"><div class="kb-ava">${escapeHtml(chatCtx.seller[0])}</div><div class="kb-bubwrap"><div class="kb-bubble">${escapeHtml(m.t)}</div></div><div class="kb-time">${clockKR(m.at)}</div></div>`;
+  }).join("");
+  body.scrollTop=body.scrollHeight;
+}
+function sendChat(preset){
+  const inp=document.getElementById("chat-input");
+  const text=(preset!==undefined?preset:inp.value).trim();
+  if(!text||!chatCtx)return;
+  chatCtx.msgs.push({who:"me",t:text,at:Date.now()});
+  if(preset===undefined)inp.value="";
+  saveThread();renderChat();
+}
+
+/* ====== 초기화 ====== */
+buildPills();
+buildSearchPills();
+setIcon();
+
+/* 보안: 이번 방문(세션)에 로그인했을 때만 자동 진입, 아니면 다시 로그인 */
+(function(){
+  const p=loadProfile();
+  let sess=false; try{sess=sessionStorage.getItem("nbnbs_login")==="1";}catch(e){}
+  if(p&&p.name&&sess){
+    setUser({name:p.name,uid:p.uid,studentId:p.studentId});
+    show("home");
+  }else if(p&&p.name){
+    /* 저장된 정보로 미리 채우고 다시 로그인하게 */
+    document.getElementById("wc-name").value=p.name;
+    document.getElementById("wc-sid-input").value=p.studentId||"";
+    if(p.school){pendingSchool={name:p.school,city:p.city};const el=document.getElementById("wc-school");if(el)el.textContent="🏫 "+p.school;}
+    show("welcome");
+  }else{
+    show("welcome");
+  }
+})();
+</script>
+
+</body>
+</html>
